@@ -33,7 +33,10 @@ TBD
 
 * 3:00pm: Create Readme, repo and reformat capstone-proposal.md
 * 7pm-8:50pm: Complete React Native Section 1: Getting Started, Add separate branch called UdemyProject1 to build practice app along with the course.
-* 
+
+### Monday, 6/19
+
+* 2:00pm: Udemy Section 2:
 ---
     
 ## Known Bugs
