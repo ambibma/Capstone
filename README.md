@@ -37,6 +37,7 @@ TBD
 ### Monday, 6/19
 
 * 2:00pm: Finish setting up dev environment complete with Android and iOS emulation
+         <img src  = ./DevLogImg/log1.png width= '250'> 
 * 4:00pm: Udemy Section 2: React Native Basics [Course Goals App]
 ---
     
