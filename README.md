@@ -36,7 +36,8 @@ TBD
 
 ### Monday, 6/19
 
-* 2:00pm: Udemy Section 2:
+* 2:00pm: Finish setting up dev environment complete with Android and iOS emulation
+* 4:00pm: Udemy Section 2: React Native Basics [Course Goals App]
 ---
     
 ## Known Bugs
