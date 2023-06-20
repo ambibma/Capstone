@@ -23,7 +23,7 @@ TBD
 ### Research & Planning Log
 #### Sunday, 05/28
 * 5:00pm: Concieve Idea, Write out capstone proposal, create technology plan
-* 7:00pm -8:00pm : Research React Native via Youtube, compare bettween Flutter and React Native 
+* 7:00pm -8:00pm : Research React Native via Youtube, compare between Flutter and React Native 
 
 ### Sunday, 06/4 
 
@@ -39,6 +39,7 @@ TBD
 * 2:00pm: Finish setting up dev environment complete with Android and iOS emulation
          <img src  = ./DevLogImg/log1.png width= '250'> 
 * 4:00pm: Udemy Section 2: React Native Basics [Course Goals App]
+* 7:00pm: Complete lessons Section 2 (12 to 23 out of 38) Learn Styling, Flexbox in Native, Learn  EventHandlers and adding data to state using hooks
 ---
     
 ## Known Bugs
