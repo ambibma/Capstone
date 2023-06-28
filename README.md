@@ -49,6 +49,8 @@ TBD
 
 ### Wednesday, 6/28
 * 2:30pm Section 2: 30/38 
+* 4:30pm: Complete Section 2: 38/38 ✅, complete first practice app (goals app.)
+    <img src='./DevLogImg/log2.png' width='250'>
 ---
     
 ## Known Bugs
