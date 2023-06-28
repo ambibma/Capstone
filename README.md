@@ -40,6 +40,10 @@ TBD
          <img src  = ./DevLogImg/log1.png width= '250'> 
 * 4:00pm: Udemy Section 2: React Native Basics [Course Goals App]
 * 7:00pm: Complete lessons Section 2 (12 to 23 out of 38) Learn Styling, Flexbox in Native, Learn  EventHandlers and adding data to state using hooks
+
+
+### Tuesday, 6/27
+* 7:00pm  Section 2: 24/38  
 ---
     
 ## Known Bugs
