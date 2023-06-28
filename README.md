@@ -46,6 +46,9 @@ TBD
 * 7:00pm  Section 2: 24/38  
 * 8:07 Section 2 Lessons 24-26/38 Learn ScrollView and FlatList props
 * 9:20pm: Section 2  Lessons: 27-30 : Separate Application into separate  files, use props and explore 'Pressable' component 
+
+### Wednesday, 6/28
+* 2:30pm Section 2: 30/38 
 ---
     
 ## Known Bugs
