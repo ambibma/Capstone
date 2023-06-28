@@ -44,6 +44,7 @@ TBD
 
 ### Tuesday, 6/27
 * 7:00pm  Section 2: 24/38  
+* 8:07 Section 2 24-26/38 Learn scrollview and flatlist props
 ---
     
 ## Known Bugs
