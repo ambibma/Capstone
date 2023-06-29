@@ -51,7 +51,9 @@ TBD
 * 2:30pm Section 2: 30/38 
 * 4:30pm: Complete Section 2: 38/38 ✅, complete first practice app (goals app.)
     <img src='./DevLogImg/log2.png' width='250'>
-* 4:50 : Add README to practice application   
+* 4:50 : Add README to practice application 
+* 8:00pm : Begin Section 4 (skip 3: debugging for now) Start practice Project2 (guess Number game)
+* 9:30pm :  Complete Section 4: Lesson 45-52 of 78 Learn custom Button creation, platform styling, text specific input fields
 ---
     
 ## Known Bugs
