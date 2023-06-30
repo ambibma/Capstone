@@ -54,6 +54,15 @@ TBD
 * 4:50 : Add README to practice application 
 * 8:00pm : Begin Section 4 (skip 3: debugging for now) Start practice Project2 (guess Number game)
 * 9:30pm :  Complete Section 4: Lesson 45-52 of 78 Learn custom Button creation, platform styling, text specific input fields
+
+### Thursday, 6/29
+* 4:30pm - 6:00pm Lesson 52-56 Visual Feedback to Buttons
+
+### Friday, 6/30
+* 1:30pm: Section 3:57/78 Begin Game Logic
+* 3:00pm: Section 3:59/78 Input Field error handling
+* 
+
 ---
     
 ## Known Bugs
