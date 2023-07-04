@@ -68,6 +68,16 @@ TBD
 
 * 3:00pm-9:00pm Section 3: 60-69 : Start Game screens, Device screen restrictions, global color objects, import Native Icons, creating your own css, implementing icons into buttons.
 ---
+
+## React Native Practice Applications
+Goals Application 
+
+https://github.com/ambibma/goals-react-native
+
+Guess My Number
+
+https://github.com/ambibma/guess-my-number
+
     
 ## Known Bugs
 
