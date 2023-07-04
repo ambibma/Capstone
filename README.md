@@ -64,6 +64,9 @@ TBD
 * 5:30pm: Create Plan/design in notebook of Screens and Components. Screens determine which components will be neccessary to handle what is shown to the user. Components listed to determine which components are going to be needed to be custom, such as buttons, profile display etc. This is the bare bones start of a game-plan. Docs will be reformatted and created again digitally.
     https://docs.google.com/presentation/d/1O1sLVeLzv1KDaUPaEyBdcASvCrg3iJYVJhbauGH5Ls0/edit#slide=id.p
 
+### Monday, July 3rd
+
+* 3:00pm-9:00pm Section 3: 60-69 : Start Game screens, Device screen restrictions, global color objects, import Native Icons, creating your own css, implementing icons into buttons.
 ---
     
 ## Known Bugs
