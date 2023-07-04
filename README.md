@@ -61,7 +61,7 @@ TBD
 ### Friday, 6/30
 * 1:30pm: Section 3:57/78 Begin Game Logic
 * 3:00pm: Section 3:59/78 Input Field error handling
-* 5:30pm: Create Plan/design in notebook of Screens and Components. Screens determine which components will be neccessary to handle what is shown to the user. Components listed to determine which components are going to be needed to be custom, such as buttons, profile display etc. This is the bare bones start of a game-plan. Docs will be reformatted and created again digitally.
+* 5:30pm: Create Plan/design in notebook of Screens and Components. Screens determine which components will be necessary to handle what is shown to the user. Components listed to determine which components are going to be needed to be custom, such as buttons, profile display etc. This is the bare bones start of a game-plan. Docs will be reformatted and created again digitally.
     https://docs.google.com/presentation/d/1O1sLVeLzv1KDaUPaEyBdcASvCrg3iJYVJhbauGH5Ls0/edit#slide=id.p
 
 ### Monday, July 3rd
