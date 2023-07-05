@@ -67,6 +67,15 @@ TBD
 ### Monday, July 3rd
 
 * 3:00pm-9:00pm Section 3: 60-69 : Start Game screens, Device screen restrictions, global color objects, import Native Icons, creating your own css, implementing icons into buttons.
+
+### Tuesday, July 4th
+
+* 11:00Am-2:00pm Section 3 :70-72 : Add Splash Screen/solve major bug within course for App to handle loading custom fonts and icons.
+
+### Wednesday, July 5th  
+
+* 12:00pm -2:00pm Section 3: 72/78 of 78 ✅: Complete Guess My Number Application, practice app #2
+    https://github.com/ambibma/guess-my-number
 ---
 
 ## React Native Practice Applications
