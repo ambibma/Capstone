@@ -20,6 +20,8 @@ TBD
 
 ---
 
+
+
 ### Research & Planning Log
 #### Sunday, 05/28
 * 5:00pm: Concieve Idea, Write out capstone proposal, create technology plan
@@ -76,7 +78,37 @@ TBD
 
 * 12:00pm -2:00pm Section 3: 72/78 of 78 ✅: Complete Guess My Number Application, practice app #2
     https://github.com/ambibma/guess-my-number
+
+### Thursday, July 6th
+* 1:00pm -5:00pm : Brainstorm new app names, begin application initialization, add ToDo/plan. Research through React Native documentation. Brainstorm FireBase backend, initialize a bare bones expo quick start project.    
 ---
+
+## Planning
+### TO DO
+* Screens:
+  * HomeScreen
+    Components:
+    * Navbar
+      * Navbar container (row)
+      * Nav Buttons:
+        * Search
+        * Home
+        * Profile
+    * Profile Card
+      * Profile Details (Modal, or new Screen?)
+        * (Name, Location, Genre, Seeking, Skills, Commitment level, goals, about)
+* Log In / Sign Up Screen
+    Components:
+    * Log In Card
+      * Text Input * 2 (username, password)
+      * Log In /Sign Up Buttons
+* Create Profile/Edit
+    * Components
+      * Form
+        * Text Inputs (Name, Location, Genre, Seeking, Skills, Commitment level, goals, about)
+        * Image (Profile Pic /upload user camera)
+        * Demo Upload
+
 
 ## React Native Practice Applications
 Goals Application 
