@@ -80,7 +80,11 @@ TBD
     https://github.com/ambibma/guess-my-number
 
 ### Thursday, July 6th
-* 1:00pm -5:00pm : Brainstorm new app names, begin application initialization, add ToDo/plan. Research through React Native documentation. Brainstorm FireBase backend, initialize a bare bones expo quick start project.    
+* 1:00pm -5:00pm : Brainstorm new app names, begin application initialization, add ToDo/plan. Research through React Native documentation. Brainstorm FireBase backend, initialize a bare bones expo quick start project. 
+
+### Friday, July 7th
+* 4:00pm-10:30pm : Section 6 (Navigation) Lessons 90-95 . Research React Navigation though its documents, look at another tutorial of a tinder-clone application with Firebase, learn about how firebase will be used to display information to a "Cards" component
+
 ---
 
 ## Planning
