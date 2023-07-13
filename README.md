@@ -92,7 +92,7 @@ TBD
 
 * 3:00pm -5:00pm: Section 6 101-105. Stack Navigation, passing data to new screens with useNavigation hook.
 
-### Tuesday, July 11th
+### Wednesday, July 11th
 * 2:00pm - 8:00pm  Section 6: 105-110 Stack Navigator using the drawer navigator
 * 8:00pm - 9:20pm: Complete Section 6: 110-113 Finish Meals Application ✅
       https://github.com/ambibma/meals-react-native
