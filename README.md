@@ -83,7 +83,20 @@ TBD
 * 1:00pm -5:00pm : Brainstorm new app names, begin application initialization, add ToDo/plan. Research through React Native documentation. Brainstorm FireBase backend, initialize a bare bones expo quick start project. 
 
 ### Friday, July 7th
-* 4:00pm-10:30pm : Section 6 (Navigation) Lessons 90-95 . Research React Navigation though its documents, look at another tutorial of a tinder-clone application with Firebase, learn about how firebase will be used to display information to a "Cards" component
+* 4:00pm-10:30pm : Section 6 (Navigation) Lessons 90-95 . Research React Navigation though its documents, look at another tutorial of a tinder-clone application with Firebase, learn about how firebase will be used to display information to a "Cards" component.
+
+### Saturday, July 8th
+* 1:00pm - 5:00pm : Section 6 Lessons 96-100. Stack Navigation, registering screens.
+
+### Monday, July 10th 
+
+* 3:00pm -5:00pm: Section 6 101-105. Stack Navigation, passing data to new screens with useNavigation hook.
+
+### Tuesday, July 11th
+* 2:00pm - 8:00pm  Section 6: 105-110 Stack Navigator using the drawer navigator
+* 8:00pm - 9:20pm: Complete Section 6: 110-113 Finish Meals Application ✅
+      https://github.com/ambibma/meals-react-native
+
 
 ---
 
@@ -122,6 +135,10 @@ https://github.com/ambibma/goals-react-native
 Guess My Number
 
 https://github.com/ambibma/guess-my-number
+
+Meal Recipes
+
+https://github.com/ambibma/meals-react-native
 
     
 ## Known Bugs
