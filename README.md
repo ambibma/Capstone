@@ -95,6 +95,7 @@ TBD
 ### Wednesday, July 11th
 * 2:00pm - 8:00pm  Section 6: 105-110 Stack Navigator using the drawer navigator
 * 8:00pm - 9:20pm: Complete Section 6: 110-113 Finish Meals Application ✅
+* 9:30 - 10:30pm Section  7:  114- 118: Learn about use contextHook, create FavoritesContext with CRUD! Learn how to use a context onto components. Update Meals application to now have usable CRUD favorites functionality! ✅
       https://github.com/ambibma/meals-react-native
 
 
