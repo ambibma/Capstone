@@ -12,14 +12,23 @@ import Profile from "../models/profile";
 
 export const PROFILES = [
   new Profile(
+    //id
     "1",
+    //name
     "Natalie Cole",
+    //location
     "Portland, Oregon",
+    //imageUrl
     "https://images.unsplash.com/photo-1495924979005-79104481a52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+    //genre
     "Punk, Rock, Experimental",
+    //seeking
     "Hardcore Band",
+    //skills
     "Bass,Guitar,Ableton",
+    //goals
     "Record a Demo",
+    //about
     "I have been playing for 20 years, never started a band want to make a scene!"    
   ),
   new Profile(
