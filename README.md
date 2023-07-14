@@ -39,7 +39,7 @@ TBD
 ### Monday, 6/19
 
 * 2:00pm: Finish setting up dev environment complete with Android and iOS emulation
-         <img src  = ./DevLogImg/log1.png width= '250'> 
+         <img src  = ./DevLogImg/log1.png width= '250'/> 
 * 4:00pm: Udemy Section 2: React Native Basics [Course Goals App]
 * 7:00pm: Complete lessons Section 2 (12 to 23 out of 38) Learn Styling, Flexbox in Native, Learn  EventHandlers and adding data to state using hooks
 
@@ -98,11 +98,32 @@ TBD
 * 9:30 - 10:30pm Section  7:  114- 118: Learn about use contextHook, create FavoritesContext with CRUD! Learn how to use a context onto components. Update Meals application to now have usable CRUD favorites functionality! ✅
       https://github.com/ambibma/meals-react-native
 
+### Thursday, July 12th
+* 3:00pm - Begin implementing Navigation and dummy screens into app!
+* 5:00pm - Implement navigation by bottom tabs between Homescreen and profile screen
+* 6:00pm - Add dummy data, Start Creating Profile Card, Profile List to render cards with     scrollable list 
+* 9:44pm - Work on bugs not displaying images correctly onto cards, WIP Text onto profile image card
+   
+   <img src= ./DevLogImg/log3.png width=150 >
+
 
 ---
 
 ## Planning
 ### TO DO
+
+* Implement Basic navigation with bottom tabs
+* create components for HomeScreen
+  * Render Card
+  * Display Cards
+  * search bar
+
+
+
+
+
+
+
 * Screens:
   * HomeScreen
     Components:
