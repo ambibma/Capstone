@@ -10,7 +10,7 @@ export default function ProfileList({items}) {
       const profileItemProps = {
         
         id: item.id,
-        name : item.id,
+        name : item.name,
         location : item.location,
         imageUrl : item.imageUrl,
         genre : item.genre,

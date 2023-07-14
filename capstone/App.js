@@ -7,7 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
 
-
+// create Stack navigator for profiledetails
 const BottomTab = createBottomTabNavigator();
 
 export default function App() {
@@ -27,12 +27,7 @@ export default function App() {
         component={ProfileScreen}
         options={{
           tabBarIcon: (({color, size})=> <Ionicons name="person" color={color} size={size}></Ionicons>)
-        }}
-        />
-
-
-
-
+        }}/>
 
       </BottomTab.Navigator>
 
