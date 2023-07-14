@@ -13,8 +13,7 @@ export default function ProfileCard({ id, name, location, imageUrl, seeking }) {
         <Image src={{uri: imageUrl}}>
         </Image>
         {/* title card */}
-        <View>
-        
+        <View>        
           <Text>{name}</Text>
           <Text>{location}</Text>
           <Text>{seeking}</Text>
