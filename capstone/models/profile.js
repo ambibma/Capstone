@@ -7,6 +7,7 @@ class Profile {
     location,
     imageUrl,
     genre,
+    inspiration,
     seeking,
     skills,
     goals,
@@ -19,6 +20,7 @@ class Profile {
       this.location = location;
       this.imageUrl = imageUrl;
       this.genre = genre;
+      this.inspiration = inspiration;
       this.seeking = seeking;
       this.skills = skills;
       this.goals = goals;
