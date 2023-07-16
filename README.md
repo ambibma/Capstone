@@ -106,17 +106,25 @@ TBD
    
    <img src= ./DevLogImg/log3.png width=150 >
 
+### Sunday, July 16th 
+* 11:00 Am - 2:00pm - Correct Card styling, cards now have a hero text over their image. Cards can now be pressed to show profile card details. WIP Add cardDetail styling.
+
 
 ---
 
 ## Planning
 ### TO DO
 
-* Implement Basic navigation with bottom tabs
+* ~~Implement Basic navigation with bottom tabs~~
 * create components for HomeScreen
-  * Render Card
-  * Display Cards
+  * ~~ Render Card ~~
+  * ~~ Display Cards~~
   * search bar
+* ~~ Route to details page with nested stack navigation ~~
+  * Add cardDetails styling
+  * add like button
+* move onto authentication
+* handling user input/profile creation
 
 
 
