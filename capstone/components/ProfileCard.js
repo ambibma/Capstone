@@ -16,7 +16,7 @@ export default function ProfileCard({ id, name, location, imageUrl, seeking }) {
   
   return (
     <View style={styles.profileCard}>
-      <Pressable android_ripple={{color: '#cccc'}} 
+      <Pressable android_ripple={{color: '#cccccc'}} 
         style = { ({pressed}) => 
           pressed ? styles.profilePressed : null}
         onPress={selectProfileHandler} 
@@ -57,6 +57,9 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     // alignItems:'center'
     
+  },
+  profilePressed: {
+    opacity: .5,
   },
 
   profileImage: {
