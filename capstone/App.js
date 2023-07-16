@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons'
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 // create Stack navigator for profiledetails
@@ -12,6 +13,8 @@ const BottomTab = createBottomTabNavigator();
 
 export default function App() {
   return (
+    <SafeAreaView style= {styles.screen}>
+
     
     <NavigationContainer>
       <BottomTab.Navigator>
@@ -21,7 +24,7 @@ export default function App() {
           options={{
             tabBarIcon: (({color, size})=> <Ionicons name="home" color={color} size={size}></Ionicons>)
           }}
-        />
+          />
         <BottomTab.Screen
         name="ProfileScreen" 
         component={ProfileScreen}
@@ -33,6 +36,7 @@ export default function App() {
 
 
     </NavigationContainer>
+    </SafeAreaView>
       //HomeScreen will act as the home-base that will display user profile data cards, hold the navbar.
     // <HomeScreen>
         //<ProfileCard/>
@@ -42,10 +46,8 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+   
   },
 });

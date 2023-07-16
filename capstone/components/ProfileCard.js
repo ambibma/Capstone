@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View, Image, Platform} from 'react-native'
+import { Pressable, StyleSheet, Text, View, Image, Platform, ImageBackground} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import Profile from '../models/profile'
@@ -22,15 +22,15 @@ export default function ProfileCard({ id, name, location, imageUrl, seeking }) {
         onPress={selectProfileHandler} 
       >
         <View style={styles.innerContainer}>
-        <Image style={styles.profileImage}source={{uri: imageUrl}}>
-        </Image>
-
-        </View>
+        <ImageBackground style={styles.profileImage}source={{uri: imageUrl}}>
         <ProfileCardTitle
           name={name}
           location={location}
           seeking={seeking} 
         />
+        </ImageBackground>
+
+        </View>
         {/* title card */}
       </Pressable>
     </View>
@@ -52,13 +52,16 @@ const styles = StyleSheet.create({
   innerContainer: {
     borderRadius: 8,
     overflow: "hidden",
+    // position: 'absolute',
+    // justifyContent: 'center',
+    // alignItems:'center'
     
   },
 
   profileImage: {
     
     width: '100%',
-    height: 300,
+    height: 450,
     
   }
 
