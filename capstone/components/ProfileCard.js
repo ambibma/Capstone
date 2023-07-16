@@ -26,7 +26,8 @@ export default function ProfileCard({ id, name, location, imageUrl, seeking }) {
         <ProfileCardTitle
           name={name}
           location={location}
-          seeking={seeking} 
+          seeking={seeking}
+          seekingHeader={"Seeking:"}
         />
         </ImageBackground>
 

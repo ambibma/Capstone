@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function ProfileCardTitle({name, location, seeking, style, textStyle}) {
+export default function ProfileCardTitle({name, location, seekingHeader, seeking, style, textStyle}) {
   return (
     <View style={[styles.details, style]}> 
      
@@ -11,7 +11,7 @@ export default function ProfileCardTitle({name, location, seeking, style, textSt
         <Text style={[styles.detailItem, textStyle]}>{location}</Text>
         
         
-        <Text style={[styles.detailItem, textStyle]}>Seeking: {seeking}</Text>
+        <Text style={[styles.detailItem, textStyle]}>{seekingHeader}  {seeking}</Text>
            
   </View>
   )
@@ -36,16 +36,5 @@ const styles = StyleSheet.create({
     textShadowOffset: {width: 0, height: 0},
     textShadowRadius: 8,
     
-  },
-
-  textName: {
-    
-  },
-
-  textLocation: {
-
-  },
-  textWanted: {
-
   },
 })

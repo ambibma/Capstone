@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, Image, ScrollView} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, ImageBackground} from 'react-native'
 import { PROFILES } from '../dummyData/dummy-data'
 import React from 'react'
 import ProfileCardTitle from '../components/ProfileCardTitle';
+import CardDetailsAbout from '../components/CardDetailsAbout';
 
 
 // id, 
@@ -26,24 +27,34 @@ export default function CardDetails({route, navigation}) {
 
 
   return (
-    <ScrollView>
-
-    <View>
-      <Image source={{uri:selectedProfile.imageUrl}} style={styles.image}/>
-      <ProfileCardTitle 
+    <ScrollView style={styles.rootContainer}>
+    <View style={styles.imageContainer}>      
+      <ImageBackground source={{uri:selectedProfile.imageUrl}} style={styles.image}>  
+      <ProfileCardTitle
         name={selectedProfile.name}
-        location={selectedProfile.location}
-        seeking={selectedProfile.seeking}
-        style={styles.titleStyle}
-        />
+        location={selectedProfile.location}        
+        style={styles.titleContainer}
+        textStyle={styles.titleText}
+      />
+        </ImageBackground>
     </View>
-      <View>
-        <Text>Genre: {selectedProfile.genre}</Text>
-        <Text>Seeking: {selectedProfile.skills}</Text>
-        <Text>Goals: {selectedProfile.goals}</Text>
-        <Text>About: {selectedProfile.about}</Text>
+      <View style={styles.aboutRootContainer}>
+        <CardDetailsAbout 
+          genreHeader={"Genre"}
+          genre={selectedProfile.genre}
+          inspirationHeader={"Inpsiration"}
+          inspiration={selectedProfile.inspiration}
+          skillsHeader={"Skills"}
+          skills={selectedProfile.skills}
+          goalsHeader={"Goals"}
+          goals={selectedProfile.goals}
+          aboutHeader={"About"}
+          about={selectedProfile.about}
 
-
+          containerStyle= {styles.aboutContainer}
+          headerStyle={styles.aboutHeader}
+          subTextStyle={styles.aboutText}
+        />
       </View>
   </ScrollView>
   )
@@ -51,13 +62,51 @@ export default function CardDetails({route, navigation}) {
 
 const styles = StyleSheet.create({
 
+  rootContainer: {
+    marginBottom: 32,
+  },
+  imageContainer: {
+    flex:1,
+
+  },
+
   image: {
     width: "100%",
-    height: 350,
+    height: 400,
   },
-  titleStyle: {
-    marginTop: 12,
+  titleContainer: {
     
+    flexDirection: 'column',
+    marginTop: 275,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    paddingLeft: 2 ,
+    
+  },
+  titleText: {
+    marginHorizontal: 6,
+    fontSize: 36,
+    color: 'white',
+    textShadowColor: 'black',
+    textShadowOffset: {width: 0, height: 0},
+    textShadowRadius: 8,
+    
+  },
+  aboutRootContainer: {
+    padding: 8,
+    
+  },
+  aboutContainer: {
+
+  },
+  aboutHeader : { 
+   fontWeight: 'bold',
+   fontSize: 24,
+   marginBottom: 6,
+
+  },
+  aboutText: {
+    fontSize: 18,
   }
 
 
