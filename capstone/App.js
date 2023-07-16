@@ -6,10 +6,23 @@ import { Ionicons } from '@expo/vector-icons'
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CardDetails from './screens/CardDetails';
 
 
-// create Stack navigator for profiledetails
+const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
+
+function StackNavigator() {
+  return <Stack.Navigator screenOptions={{headerShown: true}}> 
+    <Stack.Screen name="HomeScreen" component={HomeScreen}></Stack.Screen>
+    <Stack.Screen name="CardDetails" component={CardDetails}></Stack.Screen>
+
+  </Stack.Navigator>
+
+}
+
+
 
 export default function App() {
   return (
@@ -19,10 +32,11 @@ export default function App() {
     <NavigationContainer>
       <BottomTab.Navigator>
         <BottomTab.Screen
-          name="HomeScreen"
-          component={HomeScreen}
+          name="Home"
+          component={StackNavigator}
           options={{
-            tabBarIcon: (({color, size})=> <Ionicons name="home" color={color} size={size}></Ionicons>)
+            tabBarIcon: (({color, size})=> <Ionicons name="home" color={color} size={size}></Ionicons>),
+            headerShown: false,
           }}
           />
         <BottomTab.Screen

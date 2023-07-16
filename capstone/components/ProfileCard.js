@@ -5,13 +5,13 @@ import Profile from '../models/profile'
 import ProfileCardTitle from './ProfileCardTitle'
 
 export default function ProfileCard({ id, name, location, imageUrl, seeking }) {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   
  function selectProfileHandler(){
     console.log('pressed')
-    // navigation.navigate('ProfileDetailsScreen',{
-    //   profileId: id
-    // })    
+    navigation.navigate('CardDetails',{
+      profileId: id
+    })    
   }
   
   return (
