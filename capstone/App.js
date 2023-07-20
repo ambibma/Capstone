@@ -8,6 +8,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CardDetails from './screens/CardDetails';
+import UsersContextProvider from './store/users-context';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,9 +27,10 @@ function StackNavigator() {
 
 export default function App() {
   return (
+
     <SafeAreaView style= {styles.screen}>
 
-    
+    <UsersContextProvider>    
     <NavigationContainer>
       <BottomTab.Navigator>
         <BottomTab.Screen
@@ -46,10 +48,11 @@ export default function App() {
           tabBarIcon: (({color, size})=> <Ionicons name="person" color={color} size={size}></Ionicons>)
         }}/>
 
-      </BottomTab.Navigator>
+        </BottomTab.Navigator>
 
 
-    </NavigationContainer>
+        </NavigationContainer>
+      </UsersContextProvider>
     </SafeAreaView>
       //HomeScreen will act as the home-base that will display user profile data cards, hold the navbar.
     // <HomeScreen>

@@ -1,15 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { PROFILES } from '../dummyData/dummy-data'
-import ProfileList from '../components/ProfileList'
+import ProfileList from '../components/ProfileList/ProfileList'
+import { UsersContext } from '../store/users-context'
 
 const HomeScreen = ({route, navigation}) => {
-   
+  const usersCtx = useContext(UsersContext)
 
 
   return (
     <ProfileList
-      items={PROFILES}
+      items={usersCtx.users}
     />
   );
 }

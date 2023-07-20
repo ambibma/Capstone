@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, Image, ScrollView, ImageBackground} from 'react-native'
 import { PROFILES } from '../dummyData/dummy-data'
-import React from 'react'
+import React, { useContext } from 'react'
 import ProfileCardTitle from '../components/ProfileCardTitle';
-import CardDetailsAbout from '../components/CardDetailsAbout';
+import CardDetailsAbout from '../components/ProfileDetail/CardDetailsAbout';
 
 import IconButton from '../components/IconButton'
+import { UsersContext } from '../store/users-context';
 
 // id, 
 // name,
@@ -19,8 +20,10 @@ import IconButton from '../components/IconButton'
 
 export default function CardDetails({route, navigation}) {
 
-  const profileId = route.params.profileId;
-  const selectedProfile = PROFILES.find((profile) => profile.id === profileId)
+ const usersCtx = useContext(UsersContext);
+
+  const profileId = route.params?.profileId;
+  const selectedProfile = usersCtx.users.find((profile) => profile.id === profileId)
 
   
   
