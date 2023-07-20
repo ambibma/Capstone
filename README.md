@@ -112,6 +112,13 @@ TBD
 * 4:15 - 5:00pm : Add like and dislike button on profile details
 
 
+### Tuesday, July 17th
+* 4:00pm - 9:00pm Research useContext and stage code to begin refactoring to create a context-consuming application. Section 8: Lesson 142-144. 
+
+### Wednesday, July 18
+* 4:00pm-5:00pm Successfully implement context into application, delete dummy-data and rewrite into users-context, refactor existing code to use useContext hook. Add additional functions into UsersContextProvider to see if that may be used to add users from input when user creates a profile. 
+
+
 ---
 
 ## Planning
@@ -124,9 +131,16 @@ TBD
   * search bar
 * ~~Route to details page with nested stack navigation~~
   * ~~Add cardDetails styling~~
-  * add like button
-* move onto authentication
+  * ~~add like and dislike button~~ 
+* ~~Add local userContext for dummy data and make app consume data.~~
 * handling user input/profile creation
+  * use functionality available in backend
+* Refactor context to use backend firestore
+* move onto authentication
+* Add 'liking' functionality that uploads and matches likes
+  * Add matching logic using useEffect that watches dependencies for when addLike function is called and updated to database
+* Add messaging handling 
+* Add 'liked' profiles page that reuse profile card and profile List to display user 'liked' profiles
 
 
 
