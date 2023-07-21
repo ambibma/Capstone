@@ -8,26 +8,13 @@ export default function ProfileList({items}) {
   
 
   function renderProfileCard(itemData){
-      // const item = itemData.item;
-
-      // const profileItemProps = {
-        
-      //   id: item.id,
-      //   name : item.name,
-      //   location : item.location,
-      //   imageUrl : item.imageUrl,
-      //   genre : item.genre,
-      //   seeking : item.seeking,
-      //   skills : item.skills,
-      //   goals : item.goals,
-      //   about : item.about,
-      // };     
+      
         return ( <ProfileCard {...itemData.item} />
     )
   }
   return ( <View>
     <FlatList
-    data={users}
+    data={items}
     keyExtractor={(item) => item.id}
     renderItem= {renderProfileCard}    
     />

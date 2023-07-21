@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import ProfileForm from '../components/ProfileForm/ProfileForm'
+import ProfileForm from '../components/ProfileForm'
 
-export default function ProfileCreate() {
+
+export default function ProfileCreateScreen() {
   return (
-    <ProfileForm/>
+    <View>
+      <Text>Profile screen</Text>
+      <ProfileForm></ProfileForm>
+
+    </View>
   )
 }
 

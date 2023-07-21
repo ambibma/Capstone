@@ -37,7 +37,8 @@ export const PROFILES = [
     seeking: "Drummer, bassist, vocals",
     skills:  "Guitar",
     goals: "Create a speedcore jazzband",
-    about : "I am literally the best guitarist ever."    
+    about : "I am literally the best guitarist ever."
+   
     
    
     
@@ -50,14 +51,14 @@ export const PROFILES = [
     id : "3",
     name: "Joan Jett",
     location: "Portland, Oregon",
-    imageUrl: "https://media.gettyimages.com/id/549815729/ photo/joan-jett-in-new-york.jpg?s=2048x2048&w=gi&k=20& c=HFKu6uue3eejt5cI14ExNefUDMIv7u5rObCGfG4eh8M=",
+    imageUrl: "https://images.unsplash.com/photo-1553197470-4241cfa0c7c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     genre: "Rock",
      //inspiration
     inspiration: "RollingStones, FleetWood Mac, Rainbow ",
     seeking: "Just looking to jam",
     skills: "Vocals",
     goals: "Idk",
-    about: "Been around, man."    
+    about: "Been around, man.",   
   }
   
 ]
@@ -84,7 +85,7 @@ function userReducer(state, action) {
         const updatedItem = {...updatableUser, ...action.payload.data};
         const updatedUsers = [...state];
         updatedUsers[updatableUserIndex] = updatedItem;
-        return updatedExpenses; 
+        return updatedUsers; 
     case 'DELETE':
       return state.filter((user)=> user.id !== action.payload);
 

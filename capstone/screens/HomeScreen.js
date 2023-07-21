@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useContext } from 'react'
-import { PROFILES } from '../dummyData/dummy-data'
+
 import ProfileList from '../components/ProfileList/ProfileList'
 import { UsersContext } from '../store/users-context'
 

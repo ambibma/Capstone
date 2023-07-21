@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, View, Image, Platform, ImageBackground} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
-import Profile from '../../models/profile'
+
 import ProfileCardTitle from '../ProfileCardTitle'
 
 export default function ProfileCard({ id, name, location, imageUrl, seeking }) {

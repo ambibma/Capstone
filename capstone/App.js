@@ -32,9 +32,7 @@ function HomeTabs() {
         tabBarIcon: (({color, size})=> <Ionicons name="person" color={color} size={size}></Ionicons>),
         headerShown: false,
       }}
-    />
-    
-
+    /> 
     </BottomTab.Navigator>
   )
 

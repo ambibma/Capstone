@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, ScrollView, ImageBackground} from 'react-native'
-import { PROFILES } from '../dummyData/dummy-data'
+
 import React, { useContext } from 'react'
 import ProfileCardTitle from '../components/ProfileCardTitle';
 import CardDetailsAbout from '../components/ProfileDetail/CardDetailsAbout';
