@@ -7,16 +7,6 @@ import CardDetailsAbout from '../components/ProfileDetail/CardDetailsAbout';
 import IconButton from '../components/IconButton'
 import { UsersContext } from '../store/users-context';
 
-// id, 
-// name,
-// location,
-// imageUrl
-// genre,
-// seeking,
-// skills,
-// goals,
-// about,
-
 
 export default function CardDetails({route, navigation}) {
 
@@ -52,7 +42,7 @@ export default function CardDetails({route, navigation}) {
         <CardDetailsAbout 
           genreHeader={"Genre"}
           genre={selectedProfile.genre}
-          inspirationHeader={"Inpsiration"}
+          inspirationHeader={"Inspiration"}
           inspiration={selectedProfile.inspiration}
           skillsHeader={"Skills"}
           skills={selectedProfile.skills}

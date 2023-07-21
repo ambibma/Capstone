@@ -17,9 +17,11 @@ export default function ProfileForm() {
   // }
 
   return (
-    <ScrollView>      
+    <ScrollView> 
+      <Text style={styles.title}>Edit Your Profile</Text>     
       {/* upload Image tbd */}
       {/* Location API */}
+      <View style={styles.inputsRow}>
       <Input label="Name" textInputConfig={{
           // onChangeText: Function
           placeholder: 'Enter a name'
@@ -27,6 +29,7 @@ export default function ProfileForm() {
       <Input label="Location" textInputConfig={{
           placeholder: 'enter your city'
       }}/>
+      </View>
       <Input label="Inspiration" textInputConfig={{
         placeholder: 'What music inspires you'
       }}/>
@@ -53,4 +56,17 @@ export default function ProfileForm() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  inputsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  title: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      marginVertical: 24,
+      textAlign: 'center'
+  }
+
+
+})
