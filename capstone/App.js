@@ -10,19 +10,41 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CardDetails from './screens/CardDetails';
 import UsersContextProvider from './store/users-context';
 
+import ProfileCreateScreen from './screens/ProfileCreateScreen';
 
-const Stack = createNativeStackNavigator();
+
+const MainStack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
+// const HomeStack = createNativeStackNavigator();
+const ProfileStack = createNativeStackNavigator();
 
-function StackNavigator() {
-  return <Stack.Navigator screenOptions={{headerShown: true}}> 
-    <Stack.Screen name="HomeScreen" component={HomeScreen}></Stack.Screen>
-    <Stack.Screen name="CardDetails" component={CardDetails}></Stack.Screen>
+function HomeTabs() {
+  return ( 
+    <BottomTab.Navigator screenOptions={{headerShown: false}}> 
+    <BottomTab.Screen name="HomeScreen" component={HomeScreen}
+      options={{
+        tabBarIcon: (({color, size})=> <Ionicons name="home" color={color} size={size}></Ionicons>),
+        headerShown: false,
+      }}
+    />
+    <BottomTab.Screen name="Profile" component={ProfileStackScreens}
+      options={{
+        tabBarIcon: (({color, size})=> <Ionicons name="person" color={color} size={size}></Ionicons>),
+        headerShown: false,
+      }}
+    />
+    
 
-  </Stack.Navigator>
+    </BottomTab.Navigator>
+  )
 
 }
+function ProfileStackScreens(){
+  return <ProfileStack.Navigator>
+    <ProfileStack.Screen name="ProfileScreen" component={ProfileScreen}/>    
 
+  </ProfileStack.Navigator>
+}
 
 
 export default function App() {
@@ -30,35 +52,20 @@ export default function App() {
 
     <SafeAreaView style= {styles.screen}>
 
-    <UsersContextProvider>    
-    <NavigationContainer>
-      <BottomTab.Navigator>
-        <BottomTab.Screen
-          name="Home"
-          component={StackNavigator}
-          options={{
-            tabBarIcon: (({color, size})=> <Ionicons name="home" color={color} size={size}></Ionicons>),
-            headerShown: false,
-          }}
-          />
-        <BottomTab.Screen
-        name="ProfileScreen" 
-        component={ProfileScreen}
-        options={{
-          tabBarIcon: (({color, size})=> <Ionicons name="person" color={color} size={size}></Ionicons>)
-        }}/>
+    <UsersContextProvider> 
+      <NavigationContainer>
+        
+      <MainStack.Navigator>
+      <MainStack.Screen name="Home" component={HomeTabs} options={{headerShown: false}}/>
+      <MainStack.Screen name="Profile" component={ProfileStackScreens}/>
+      <MainStack.Screen name="ProfileCreateScreen" component={ProfileCreateScreen}/>
+      <MainStack.Screen name="CardDetails" component={CardDetails}></MainStack.Screen>
 
-        </BottomTab.Navigator>
-
-
-        </NavigationContainer>
+      </MainStack.Navigator>
+      </NavigationContainer>   
       </UsersContextProvider>
     </SafeAreaView>
-      //HomeScreen will act as the home-base that will display user profile data cards, hold the navbar.
-    // <HomeScreen>
-        //<ProfileCard/>
-        //<NavBar>
-        //<HomeScreen>
+    
   );
 }
 
