@@ -7,7 +7,7 @@ export const PROFILES = [
     //id
    id:  "1",
     //name
-   name: "Natalie Cole",
+   profileName: "Natalie Cole",
     //location
    location: "Portland, Oregon",
     //imageUrl
@@ -29,7 +29,7 @@ export const PROFILES = [
  
   {
     id: "2",
-    name: "Tyler Adams",
+    profileName: "Tyler Adams",
     location: "Portland, Oregon",
     imageUrl: "https://images.unsplash.com/photo-1596334861142-48f19282fcba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80",
     genre:  "Blues, Rock, SpeedCore",
@@ -49,7 +49,7 @@ export const PROFILES = [
   
   {
     id : "3",
-    name: "Joan Jett",
+    profileName: "Joan Jett",
     location: "Portland, Oregon",
     imageUrl: "https://images.unsplash.com/photo-1553197470-4241cfa0c7c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     genre: "Rock",
@@ -65,9 +65,9 @@ export const PROFILES = [
 
 export const UsersContext = createContext({
   users: [],
-  addUser: ({name, location, imageUrl, genre, seeking, skills, goals, about  }) => {},
+  addUser: ({profileName, location, imageUrl, genre, seeking, skills, goals, about  }) => {},
   deleteUser: (id) => {},
-  updateUser: (id, {name, location, imageUrl, genre, seeking, skills, goals, about} ) => {},
+  updateUser: (id, {profileName, location, imageUrl, genre, seeking, skills, goals, about} ) => {},
 });
 
 function userReducer(state, action) {

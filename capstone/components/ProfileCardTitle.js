@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function ProfileCardTitle({name, location, seekingHeader, seeking, style, textStyle}) {
+export default function ProfileCardTitle({profileName, location, seekingHeader, seeking, style, textStyle}) {
   return (
     <View style={[styles.details, style]}> 
      
-        <Text style={[styles.detailItem, textStyle]}>{name}</Text>
+        <Text style={[styles.detailItem, textStyle]}>{profileName}</Text>
         
         
         <Text style={[styles.detailItem, textStyle]}>{location}</Text>

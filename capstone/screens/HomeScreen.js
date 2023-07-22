@@ -10,7 +10,7 @@ const HomeScreen = ({route, navigation}) => {
 
   return (
     <ProfileList
-      items={usersCtx.users}
+      profiles={usersCtx.users}
     />
   );
 }

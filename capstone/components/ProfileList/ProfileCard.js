@@ -4,7 +4,7 @@ import React from 'react'
 
 import ProfileCardTitle from '../ProfileCardTitle'
 
-export default function ProfileCard({ id, name, location, imageUrl, seeking }) {
+export default function ProfileCard({ id, profileName, location, imageUrl, seeking }) {
   const navigation = useNavigation();
   
  function selectProfileHandler(){
@@ -24,7 +24,7 @@ export default function ProfileCard({ id, name, location, imageUrl, seeking }) {
         <View style={styles.innerContainer}>
         <ImageBackground style={styles.profileImage}source={{uri: imageUrl}}>
         <ProfileCardTitle
-          name={name}
+          profileName={profileName}
           location={location}
           seeking={seeking}
           seekingHeader={"Seeking:"}

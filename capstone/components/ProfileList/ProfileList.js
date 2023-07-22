@@ -4,17 +4,17 @@ import ProfileCard from './ProfileCard';
 import { UsersContext } from '../../store/users-context';
 
 
-export default function ProfileList({items}) {
-  
-
   function renderProfileCard(itemData){
       
         return ( <ProfileCard {...itemData.item} />
     )
   }
+
+export default function ProfileList({profiles}) {
+  
   return ( <View>
     <FlatList
-    data={items}
+    data={profiles}
     keyExtractor={(item) => item.id}
     renderItem= {renderProfileCard}    
     />

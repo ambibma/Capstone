@@ -1,47 +1,49 @@
 import { Pressable, StyleSheet, Text, View, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import ProfileForm from '../components/ProfileForm'
 import Button from '../components/Button'
+import { UsersContext } from '../store/users-context'
 
 
 
-export default function ProfileCreateScreen() {
+export default function ProfileCreateScreen({route, navigation}) {
+
+  const usersCtx = useContext(UsersContext);
+  const editedUserId = route.params?.userId;
+  const isEditing = !!editedUserId;
+ 
   function CancelHandler() {
-    console.log("Canceled!")
+    navigation.goBack();
   }
-  function SaveHandler() {
-    console.log("Saved")
+  function confirmHandler(userData) {
+    if(isEditing) {
+      usersCtx.updateUser(
+        editedUserId,
+        userData,
+      )
+
+    } else {
+      usersCtx.addUser({
+        userData
+      })
+    }
+    navigation.goBack();
   }
 
   return (
-    <ScrollView>
-
-   
+    <ScrollView> 
       
-      <ProfileForm></ProfileForm>
-      <View style={styles.buttonContainer}>
-      <Button style={styles.button} mode='flat' onPress={CancelHandler}>Cancel</Button>
-      <Button style={styles.button} onPress={SaveHandler}>Save</Button>
-      </View>
+      <ProfileForm 
+      onCancel={CancelHandler}
+      onSubmit={confirmHandler}
+      />
+   
 
     </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    flexDirection: 'row',
-   justifyContent: 'center',   
-   alignItems: 'center',
-   padding: 8,
-   marginHorizontal: 40 ,  
-  
-  },
-  button: {
-    flex: 1,
-    minWidth: 120,
-    marginHorizontal: 8,  
-   
-  },
+ 
 
 })
