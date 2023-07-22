@@ -118,6 +118,14 @@ TBD
 ### Wednesday, July 18
 * 4:00pm-5:00pm Successfully implement context into application, delete dummy-data and rewrite into users-context, refactor existing code to use useContext hook. Add additional functions into UsersContextProvider to see if that may be used to add users from input when user creates a profile. 
 
+### Thursday, July 19th
+
+* 3:00pm - 6:00pm Prepare application to begin handling user input, create basic input skeletons and components
+
+### Friday, July 20th
+
+12pm -5:30pm Implement handling user input that adds a user to context. Now, need to  handle differentiating between rendering users based on who is logged in, but first need to understand plugging back end into application in order to base the rendering off of who is logged in. Example: a userId will be checked for the user, and profileId will be used to see what profiles are available. 
+
 
 ---
 
