@@ -4,14 +4,14 @@ import ProfileCard from './ProfileCard';
 import { UsersContext } from '../../store/users-context';
 
 
-  function renderProfileCard(itemData){
-      
-        return ( <ProfileCard {...itemData.item} />
-    )
-  }
+
+function renderProfileCard(itemData){
+    
+      return ( <ProfileCard {...itemData.item} />
+  )
+}
 
 export default function ProfileList({profiles}) {
-  
   return ( <View>
     <FlatList
     data={profiles}

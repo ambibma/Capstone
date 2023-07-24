@@ -50,9 +50,10 @@ export default function ProfileForm({onCancel, onSubmit}) {
       skills: inputValues.skills,
       goals: inputValues.goals,
       about: inputValues.about,
-      likes: [],
+      
 
     };
+    console.log(profileData);
     onSubmit(profileData);
   }
 
@@ -70,7 +71,7 @@ export default function ProfileForm({onCancel, onSubmit}) {
       label="Name" 
       textInputConfig={{
         placeholder: 'Enter a name',
-        onChangeText: inputChangedHandler.bind(this, 'name'),
+        onChangeText: inputChangedHandler.bind(this, 'profileName'),
         value: setInputValues.profileName,
       }}/>
       <Input label="Location" textInputConfig={{

@@ -11,12 +11,15 @@ import CardDetails from './screens/CardDetails';
 import UsersContextProvider from './store/users-context';
 
 import ProfileCreateScreen from './screens/ProfileCreateScreen';
+import { supabase } from './supabase';
 
 
 const MainStack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
 // const HomeStack = createNativeStackNavigator();
 const ProfileStack = createNativeStackNavigator();
+
+ 
 
 function HomeTabs() {
   return ( 

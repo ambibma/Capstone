@@ -3,6 +3,7 @@ import { useReducer } from "react";
 
 
 export const PROFILES = [
+
   {
     //id
    id:  "1",
@@ -23,7 +24,8 @@ export const PROFILES = [
     //goals
    goals: "Record a Demo",
     //about
-   about: "I have been playing for 20 years, never started a band want to make a scene!"    
+   about: "I have been playing for 20 years, never started a band want to make a scene!",
+
   },
 
  
@@ -37,8 +39,8 @@ export const PROFILES = [
     seeking: "Drummer, bassist, vocals",
     skills:  "Guitar",
     goals: "Create a speedcore jazzband",
-    about : "I am literally the best guitarist ever."
-   
+    about : "I am literally the best guitarist ever.",
+  
     
    
     
@@ -63,6 +65,7 @@ export const PROFILES = [
   
 ]
 
+
 export const UsersContext = createContext({
   users: [],
   addUser: ({profileName, location, imageUrl, genre, seeking, skills, goals, about  }) => {},
@@ -75,7 +78,8 @@ function userReducer(state, action) {
     case 'ADD':
         //generate random id from 1-1000
       const id= Math.floor(Math.random() * 1000).toString();
-      return [{...action.payload, id: id}, ...state]
+      
+      return ( [{...action.payload, id: id}, ...state] )
     case 'UPDATE':
 
       const updatableUserIndex = state.findIndex(

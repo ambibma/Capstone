@@ -15,7 +15,7 @@ export default function ProfileCreateScreen({route, navigation}) {
   function CancelHandler() {
     navigation.goBack();
   }
-  function confirmHandler(userData) {
+  function ConfirmHandler(userData) {
     if(isEditing) {
       usersCtx.updateUser(
         editedUserId,
@@ -35,7 +35,7 @@ export default function ProfileCreateScreen({route, navigation}) {
       
       <ProfileForm 
       onCancel={CancelHandler}
-      onSubmit={confirmHandler}
+      onSubmit={ConfirmHandler}
       />
    
 

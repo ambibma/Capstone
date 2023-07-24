@@ -11,6 +11,7 @@ const HomeScreen = ({route, navigation}) => {
   return (
     <ProfileList
       profiles={usersCtx.users}
+      
     />
   );
 }
