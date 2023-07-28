@@ -11,17 +11,22 @@ import CardDetails from './screens/CardDetails';
 import UsersContextProvider from './store/users-context';
 
 import ProfileCreateScreen from './screens/ProfileCreateScreen';
-import { supabase } from './supabase';
+import LogInScreen from './screens/LogInScreen';
+import { AuthProvider } from './hooks/useAuth';
+import useAuth from './hooks/useAuth';
+
 
 
 const MainStack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
-// const HomeStack = createNativeStackNavigator();
+const AuthStack = createNativeStackNavigator();
 const ProfileStack = createNativeStackNavigator();
 
  
 
+
 function HomeTabs() {
+  
   return ( 
     <BottomTab.Navigator screenOptions={{headerShown: false}}> 
     <BottomTab.Screen name="HomeScreen" component={HomeScreen}
@@ -47,24 +52,57 @@ function ProfileStackScreens(){
   </ProfileStack.Navigator>
 }
 
+function AuthStackScreen() {
+  return <AuthStack.Navigator>
+
+<AuthStack.Screen name="LogIn" component={LogInScreen}/>     
+  </AuthStack.Navigator>
+}
+
 
 export default function App() {
+  
+  const { user } = useAuth()
+  console.log(user)
+
+  
+ 
+
   return (
 
     <SafeAreaView style= {styles.screen}>
 
-    <UsersContextProvider> 
-      <NavigationContainer>
-        
-      <MainStack.Navigator>
-      <MainStack.Screen name="Home" component={HomeTabs} options={{headerShown: false}}/>
-      <MainStack.Screen name="Profile" component={ProfileStackScreens}/>
-      <MainStack.Screen name="ProfileCreateScreen" component={ProfileCreateScreen}/>
-      <MainStack.Screen name="CardDetails" component={CardDetails}></MainStack.Screen>
+     
+     
+     
+      <NavigationContainer>        
+      <AuthProvider>
+      {/* <UsersContextProvider>  */}
+      <MainStack.Navigator> 
+        { user ? (
+            <>
+            
+         <MainStack.Screen name="Home" component={HomeTabs} options={{headerShown: false}}/>
+         <MainStack.Screen name="Profile" component={ProfileStackScreens}/>
+         <MainStack.Screen name="ProfileCreateScreen" component={ProfileCreateScreen}/>
+         <MainStack.Screen name="CardDetails" component={CardDetails}></MainStack.Screen>        
+            
+            
+            </>
+        ):(
+           <MainStack.Screen name= "Auth" component={AuthStackScreen} options={{headerShown:false}} 
+           
+           />         
+            
 
+
+        )}  
+
+
+      {/* </UsersContextProvider> */}
       </MainStack.Navigator>
+      </AuthProvider>
       </NavigationContainer>   
-      </UsersContextProvider>
     </SafeAreaView>
     
   );
