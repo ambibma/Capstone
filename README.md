@@ -112,19 +112,25 @@ TBD
 * 4:15 - 5:00pm : Add like and dislike button on profile details
 
 
-### Tuesday, July 17th
+### Tuesday, July 18th
 * 4:00pm - 9:00pm Research useContext and stage code to begin refactoring to create a context-consuming application. Section 8: Lesson 142-144. 
 
-### Wednesday, July 18
+### Wednesday, July 19
 * 4:00pm-5:00pm Successfully implement context into application, delete dummy-data and rewrite into users-context, refactor existing code to use useContext hook. Add additional functions into UsersContextProvider to see if that may be used to add users from input when user creates a profile. 
 
-### Thursday, July 19th
+### Thursday, July 20th
 
 * 3:00pm - 6:00pm Prepare application to begin handling user input, create basic input skeletons and components
 
-### Friday, July 20th
+### Friday, July 21th
 
-12pm -5:30pm Implement handling user input that adds a user to context. Now, need to  handle differentiating between rendering users based on who is logged in, but first need to understand plugging back end into application in order to base the rendering off of who is logged in. Example: a userId will be checked for the user, and profileId will be used to see what profiles are available. 
+12pm -5:30pm Implement handling user input that adds a user to context. Now, need to  handle differentiating between rendering users based on who is logged in, but first need to understand plugging back end into application in order to base the rendering off of who is logged in. Example: a userId will be checked for the user, and profileId will be used to see what profiles are available.
+
+### Saturday, July 22nd
+
+
+
+
 
 
 ---
@@ -144,15 +150,11 @@ TBD
 * handling user input/profile creation
   * use functionality available in backend
 * Refactor context to use backend firestore
-* move onto authentication
+* ~~move onto authentication~~
 * Add 'liking' functionality that uploads and matches likes
   * Add matching logic using useEffect that watches dependencies for when addLike function is called and updated to database
 * Add messaging handling 
 * Add 'liked' profiles page that reuse profile card and profile List to display user 'liked' profiles
-
-
-
-
 
 
 
