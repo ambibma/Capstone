@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 
 import ProfileList from '../components/ProfileList/ProfileList'
 import { UsersContext } from '../store/users-context'
