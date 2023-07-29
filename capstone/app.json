@@ -15,16 +15,28 @@
       "**/*"
     ],
     "ios": {
+      
       "supportsTablet": true
     },
     "android": {
+      
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ambibma.capstone"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "FIREBASE_API_KEY": "AIzaSyCQV2n9nfHXqRuhYGnYjXAOKrvF9YYqdHM",
+      "FIREBASE_AUTH_DOMAIN": "capstone-f7dfa.firebaseapp.com",
+      "FIREBASE_PROJECT_ID": "capstone-f7dfa",
+      "FIREBASE_STORAGE_BUCKET": "gs://capstone-f7dfa.appspot.com/",
+      "FIREBASE_SENDER_ID": "1062257998473",
+      "FIREBASE_APP_ID": "1:1062257998473:web:b56317412bc48933d86458",
+      "FIREBASE_MEASUREMENT_ID": "G-03BBK67M9X"
     }
   }
 }
