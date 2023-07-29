@@ -124,14 +124,33 @@ TBD
 
 ### Friday, July 21th
 
-12pm -5:30pm Implement handling user input that adds a user to context. Now, need to  handle differentiating between rendering users based on who is logged in, but first need to understand plugging back end into application in order to base the rendering off of who is logged in. Example: a userId will be checked for the user, and profileId will be used to see what profiles are available.
-
-### Saturday, July 22nd
+12pm -6pm Implement handling user input that adds a user to context. Now, need to  handle differentiating between rendering users based on who is logged in, but first need to understand plugging back end into application in order to base the rendering off of who is logged in. Example: a userId will be checked for the user, and profileId will be used to see what profiles are available.
 
 
+### Saturday, July 22d
+ 2:00pm - 8:00pm :  Create separate branch for integration of SupaBase, research documentation, research tutorials. 
 
+### Monday, July 24th
 
+  2:00pm - 11:30pm : Attempt to initialize supabase, experience a failure of initialization. Create AuthStackScreens auth flow, to create a log in and sign in screen before app is shown. Calls to supabase result in failure as SB cannot create an instance. Install yup to handle form submission and handle submission as a specific structured object, debug for many many hours.
 
+### Wednesday, 26th
+
+  4:00pm Begin research on Firebase, as my first option for a backend. Research documentation tutorials. Choose between different options in handling Authorization, 1. axios html post requests, 2. Google auth or 3. sign in with email password from firebase.js
+
+  7:00pm -12:00pm Attempt to implement google auth, learn that it requires having two different firebase initialization files with in the application, must be conditionally handled and must create custom native code in order to use Expo Go, which handles bundling of JS code.
+
+### Thursday, 27th
+
+  2:00pm - 10:00pm: Learn that certain sign in with google libraries are depreciated as well as creating a React Native application that handles iOS and android auth must be registered and build as a EAS (Expo App Service), which fails to build and fail to initialize. Turns out google auth is extremely difficult on React Native Expo applications. Opt in for Sign in with email and password as basic auth for application.
+
+### Friday, 28th
+
+  9:00am - 12:00am :  Begin on creating a custom useAuth hook that can be used to handle back-end log in and logout services, create an Auth providing context to conditionally render protected screens for application. Debug for many hours, while useAuth hook is correctly implemented app.js fails to conditionally render application. Log in is able to execute successfully, however user state renders undefined in app.js .  Many, many, many, hours of research and debugging.  
+### Saturday, 29th
+
+  12:00pm: Take hail mary approach and begin to separate all navigational components into separate files in order to debug, if user constant is false in app function, maybe that is the wrong approach to handle conditional rendering in the application, since it is the first thing that is fired when app is initialized. 
+  2:30pm : After separating all navigational components into separate files, useAuth is correctly handles conditional rendering!!! Implement logOut function to test and it works!!!
 
 ---
 
@@ -139,7 +158,7 @@ TBD
 ### TO DO
 
 * ~~Implement Basic navigation with bottom tabs~~
-* create components for HomeScreen
+* ~~create components for HomeScreen~~
   * ~~Render Card~~
   * ~~Display Cards~~
   * search bar
@@ -159,26 +178,27 @@ TBD
 
 
 * Screens:
-  * HomeScreen
+  * ~~HomeScreen~~
     Components:
-    * Navbar
-      * Navbar container (row)
+    * ~~Navbar~~
+      * ~~Navbar container (row)~~
       * Nav Buttons:
         * Search
-        * Home
-        * Profile
+        * ~~Home~~
+        * ~~Profile~~
     * Profile Card
       * Profile Details (Modal, or new Screen?)
         * (Name, Location, Genre, Seeking, Skills, Commitment level, goals, about)
 * Log In / Sign Up Screen
     Components:
-    * Log In Card
-      * Text Input * 2 (username, password)
-      * Log In /Sign Up Buttons
+    ~~* Log In Card~~
+      * ~~Text Input * 2 (username, password)~~
+      * Log In /
+      * Sign Up screen to create profile =>
 * Create Profile/Edit
     * Components
-      * Form
-        * Text Inputs (Name, Location, Genre, Seeking, Skills, Commitment level, goals, about)
+     * ~~Form~~
+        * ~~Text Inputs (Name, Location, Genre, Seeking, Skills, Commitment level, goals, about)~~
         * Image (Profile Pic /upload user camera)
         * Demo Upload
 
