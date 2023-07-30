@@ -20,12 +20,6 @@ import AuthStackScreens from './screens/AuthStackScreens';
 import MainStackScreens from './screens/MainStackScreens';
 
 
-
-
-
-
-
-
 export default  function App() {
   return (
     <SafeAreaView style={styles.screen}>

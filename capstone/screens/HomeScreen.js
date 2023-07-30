@@ -7,8 +7,8 @@ import { UsersContext } from '../store/users-context'
 const HomeScreen = ({route, navigation}) => {
   const usersCtx = useContext(UsersContext)
 
-
-  return (
+  
+    return (
     <ProfileList
       profiles={usersCtx.users}
       

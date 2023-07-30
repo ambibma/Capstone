@@ -1,6 +1,6 @@
  import { StyleSheet, Text, View } from 'react-native'
  import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, User } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, User } from 'firebase/auth';
  import { auth } from '../firebase';
 
 
@@ -13,7 +13,8 @@ import { onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, U
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [loadingInitial, setLoadingInitial] = useState(true)
-
+  
+  
   //implicitly returns an unsubscribe
   useEffect(
     () => 
@@ -33,10 +34,28 @@ import { onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, U
         }),
       []
     );
+
+    const signUp = async (email, password) => {
+      try{
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        setUser(userCredential.user);
+      } catch (error) {
+        setError(error.message);
+
+      }
+    }
     
-    const logOut = () => {
-      setLoading(true);
-      auth.signOut(auth).catch((error) => setError(error)).finally(() =>setLoading(false))
+    const logOut =  async () => {
+      setLoading(true)
+      try {
+        await auth.signOut(auth);
+        setUser(null);
+        setLoading(false)
+      } catch (error) {
+        setError(error.message);
+      }
+      // setLoading(true);
+      // auth.signOut(auth).catch((error) => setError(error)).finally(() => setLoading(false))
     }
     
     const signIn = async(userEmail, userPassword) => {
@@ -53,6 +72,7 @@ import { onAuthStateChanged, signInWithCredential, signInWithEmailAndPassword, U
       user, 
       loading,       
       signIn,
+      signUp,
       logOut
     }), [user, loading, error ] )
 
