@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, ScrollView, ImageBackground} from 'react-native'
 
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import ProfileCardTitle from '../components/ProfileCardTitle';
 import CardDetailsAbout from '../components/ProfileDetail/CardDetailsAbout';
 
@@ -10,10 +10,27 @@ import { UsersContext } from '../store/users-context';
 
 export default function CardDetails({route, navigation}) {
 
- const usersCtx = useContext(UsersContext);
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedProfile, setSelectedProfile] = useState(null);
 
+  const usersCtx = useContext(UsersContext);
   const profileId = route.params?.profileId;
-  const selectedProfile = usersCtx.users.find((profile) => profile.id === profileId)
+
+  useEffect(()=> {
+      const fetchProfileData= async() => {
+        try {
+          const profile = usersCtx.users.users.find((profile)=> profile.id === profileId);
+          setSelectedProfile(profile);
+          setIsLoading(false);
+        } catch(error) {
+          console.error('Error Fetching profile data', error.message);
+          setIsLoading(false);
+        }
+      };
+      fetchProfileData()
+  }, [profileId, usersCtx.users])
+
+  // const selectedProfile = usersCtx.users.find((profile) => profile.id === profileId)
 
   
   
@@ -25,13 +42,15 @@ export default function CardDetails({route, navigation}) {
   function HandleDislike () {
     console.log("Dislike >:(")
   }
-
+  if (isLoading || !selectedProfile) {
+    return <Text>Loading...</Text>; 
+  }
   return (
     <ScrollView style={styles.rootContainer}>
     <View style={styles.imageContainer}>      
       <ImageBackground source={{uri:selectedProfile.imageUrl}} style={styles.image}>  
       <ProfileCardTitle
-        name={selectedProfile.name}
+        profileName={selectedProfile.profileName}
         location={selectedProfile.location}        
         style={styles.titleContainer}
         textStyle={styles.titleText}

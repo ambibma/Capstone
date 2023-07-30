@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+
 
 export default function ProfileCardTitle({profileName, location, seekingHeader, seeking, style, textStyle}) {
   return (

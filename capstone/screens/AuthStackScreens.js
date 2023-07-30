@@ -11,11 +11,13 @@ import { useNavigation } from '@react-navigation/native';
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from "yup";
 import {useForm} from "react-hook-form";
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { auth } from '../firebase';
 import HomeScreen from './HomeScreen';
 
 import useAuth from '../hooks/useAuth';
+import ProfileCreateScreen from './ProfileCreateScreen';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 
 
@@ -147,39 +149,75 @@ export  function LoginScreen({navigation}) {
   )
 }
 
-export  function SignUpScreen({navigation}) {
+export  function SignUpScreen() {
+
   
-    const createUser = (email, password) => {
+
+    const navigation = useNavigation()
+
+    const {
+      register, 
+      setValue, 
+      getValues, 
+      handleSubmit, 
+      // control, 
+      // reset, 
+      formState:  {errors},
+    } = useForm({
+      resolver: yupResolver(loginSchema),
+      defaultValues: {
+        email: '',
+        password: "",
+      },
+    });
+  
+    useEffect (() => {
+        register("email");
+        register("password");
+    }, [] )
+  
+    const createUser = async ({email, password}) => {    
       try {
-        auth.createUserWithEmailAndPassword()
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        navigation.navigate("ProfileCreateScreen")
+        console.log("User created successfully", userCredential.user);
       } catch (error) {
+        console.error("Error creating user", error.message)
         alert(error);
       }
     }
-    // navigation.navigate("HomeScreen")
+   
+
   
   function cancelCreate () {
     navigation.goBack();
   }
   return (
-    <View>
-      <Input label="Email"/>
-      <Input label="Create Password"/>
-      <Button onPress={createUser} > Confirm </Button>
-      <Button mode={"flat"} onPress={cancelCreate} > Cancel </Button>
+    <View style={styles.container}>
+      <Input
+        label="Email"
+        onChangeText={(text) => setValue('email', text)}
+        error={errors.email?.message}
+      />
+
+      <Input
+        label="Password"
+        onChangeText={(text) => setValue('password', text)}
+        secureTextEntry
+        error={errors.password?.message}
+      />
+
+      <Button onPress={handleSubmit(createUser)}>Create Account</Button>
+      
     </View>
   );
 }
-
-
-
-
-
 
 function AuthStackScreens() {
   return <AuthStack.Navigator > 
     <AuthStack.Screen name="LoginScreen" component={LoginScreen}/>
     <AuthStack.Screen name="SignUpScreen" component={SignUpScreen}/>
+    <AuthStack.Screen name="ProfileCreateScreen" component={ProfileCreateScreen}/>
     {/* navigate to profilecreate screen */}
  
   </AuthStack.Navigator>

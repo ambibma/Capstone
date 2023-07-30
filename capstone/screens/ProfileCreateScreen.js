@@ -4,6 +4,8 @@ import ProfileForm from '../components/ProfileForm'
 import Button from '../components/Button'
 import { UsersContext } from '../store/users-context'
 
+import useAuth from '../hooks/useAuth'
+
 
 
 export default function ProfileCreateScreen({route, navigation}) {
@@ -11,23 +13,27 @@ export default function ProfileCreateScreen({route, navigation}) {
   const usersCtx = useContext(UsersContext);
   const editedUserId = route.params?.userId;
   const isEditing = !!editedUserId;
+  const { user } = useAuth()
  
   function CancelHandler() {
     navigation.goBack();
   }
   function ConfirmHandler(userData) {
     if(isEditing) {
-      usersCtx.updateUser(
-        editedUserId,
-        userData,
-      )
+      usersCtx.updateUserProfile(user.uid, profileData);
+      // usersCtx.updateUser(
+      //   editedUserId,
+      //   userData,
+      // )
 
     } else {
-      usersCtx.addUser({
-        userData
-      })
-    }
+      usersCtx.addUserProfile(userId, profileData)
+    //   usersCtx.addUser({
+    //     userData
+    //   })
+    // }
     navigation.goBack();
+    }
   }
 
   return (

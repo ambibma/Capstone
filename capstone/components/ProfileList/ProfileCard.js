@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View, Image, Platform, ImageBackground} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import React from 'react'
+
 
 import ProfileCardTitle from '../ProfileCardTitle'
 
