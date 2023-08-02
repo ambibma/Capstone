@@ -147,10 +147,22 @@ TBD
 ### Friday, 28th
 
   9:00am - 12:00am :  Begin on creating a custom useAuth hook that can be used to handle back-end log in and logout services, create an Auth providing context to conditionally render protected screens for application. Debug for many hours, while useAuth hook is correctly implemented app.js fails to conditionally render application. Log in is able to execute successfully, however user state renders undefined in app.js .  Many, many, many, hours of research and debugging.  
-### Saturday, 29th
+### Saturday, 29th - Sunday, July  30th
 
   12:00pm: Take hail mary approach and begin to separate all navigational components into separate files in order to debug, if user constant is false in app function, maybe that is the wrong approach to handle conditional rendering in the application, since it is the first thing that is fired when app is initialized. 
+  
   2:30pm : After separating all navigational components into separate files, useAuth is correctly handles conditional rendering!!! Implement logOut function to test and it works!!!
+
+
+
+  7:00pm : Begin work on forcing user to create profile base on sign up. Trouble shoot many navigation errors. Being trying many different methods to get that to work.
+
+
+  10:00am : Complete work capstone, almost hit mvp
+
+
+
+
 
 ---
 
