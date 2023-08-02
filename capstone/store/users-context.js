@@ -1,7 +1,8 @@
 import { createContext, useEffect, useMemo } from "react";
 import { useReducer } from "react";
 import { db } from "../firebase";
-import { collection, addDoc, updateDoc, doc, getDocs } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, getDocs, getDoc, setDoc} from "firebase/firestore";
+import useAuth from "../hooks/useAuth";
 
 
 // export const PROFILES = [
@@ -70,8 +71,8 @@ const initialState = {users: [],};
 
 export const UsersContext = createContext({
   users: [],
-  addUserProfile: (userId, profileData) => {},
-  updateUser: (userId, profileData) => {},
+  addUserProfile: ( profileData) => {},
+  updateUser: ( profileData) => {},
   deleteUser: (userId) => {},
 });
 
@@ -81,11 +82,15 @@ function userReducer(state, action) {
         // generate random id from 1-1000
       // const id= Math.floor(Math.random() * 1000).toString();
       
-      return ( [{...action.payload}, ...state] )
+      return { ...state, users: [...state.users, action.payload] }
     case 'UPDATE_PROFILE':
-      return state.map((user) => 
-        user.userId === action.payload.userId ? {...user, ...action.payload} : user
-      )
+      return  {
+        ...state,
+        users: state.users.map((user) =>
+          user.userId === action.payload.userId ? { ...user, ...action.payload } : user
+        ),
+      };
+      
       case 'SET_PROFILES':
         return { ...state, users: action.payload};
       // const updatableUserIndex = state.findIndex(
@@ -106,34 +111,50 @@ function userReducer(state, action) {
 
 function UsersContextProvider({children}) {
  const [usersState, dispatch] = useReducer(userReducer, initialState );
+ const {user } = useAuth();
+//  console.log(user.uid)
 
  useEffect(() => {
   const fetchUserProfiles = async () => {
+    if(user&& user?.uid) {
     const userProfilesRef = collection(db, 'userProfiles');
     const snapshot = await getDocs(userProfilesRef);
-    const profiles = snapshot.docs.map((doc) => ({...doc.data(), id: doc.id}));
+    //
+    const profiles = snapshot.docs
+    .filter((doc) => doc.id !== user.uid)
+    .map((doc) => ({...doc.data(), id: doc.id}));
     console.log('Fetched profiles:', profiles);
     dispatch({type: 'SET_PROFILES', payload: profiles});
+  }
   };
-
     fetchUserProfiles();
-}, []);
+}, [user]);
 
   async function addUserProfile(userId, profileData){
+    
+    console.log("ADD USER", user.userId, profileData)
     try {
-      const profileRef = collection(db, 'userProfiles');
-      const docRef= await addDoc(profileRef, {userId, ...profileData})
-      await addDoc(profileRef, {userId, ...profileData});
-      dispatch ({type: 'ADD_PROFILE', payload: {userId, ...profileData } });
+      const profileRef = doc(db, 'userProfiles',userId);
+      // const docRef= doc(profileRef, userId);
+      await setDoc(profileRef, { userId: user.uid, ...profileData });
+      dispatch ({type: 'ADD_PROFILE', payload: {userId: user.uid, ...profileData } });
     } catch (error) {
       console.error('Error Adding Profile', error.message)
     }
   }
-  async function updateUserProfile ( userId, profileData){
+  async function updateUserProfile (userId, profileData){
+   
+    console.log("UPDATE USER", profileData)
     try {
-      const profileDocRef = doc(db, 'userProfiles', userId);
-      await updateDoc(profileDocRef, profileData);
-      dispatch({type: 'UPDATE_PROFILE', payload: {userId, ...profileData }});
+      const profileDocRef = doc(db, `userProfiles`, user.uid);
+      const docSnapshot = await getDoc(profileDocRef);
+      if (docSnapshot.exists()){
+        await updateDoc(profileDocRef,{...profileData});
+        dispatch ({type: 'UPDATE_PROFILE',payload: {...profileData }});
+      } else {
+        await setDoc(profileDocRef, { userId: user.uid, ...profileData });
+        dispatch ({type: 'ADD_PROFILE', payload: {userId: user.uid, ...profileData } });
+      }
     } catch (error) {
       console.error('Error Updating user profile', error.message);
     }

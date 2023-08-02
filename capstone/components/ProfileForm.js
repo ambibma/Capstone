@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import Input from './Input'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Button from './Button';
 // id, 
 // name,
@@ -13,7 +13,7 @@ import Button from './Button';
 // goals,
 // about,
 
-export default function ProfileForm({onCancel, onSubmit}) {
+export default function ProfileForm({onCancel, onSubmit, isEditing, initialValues}) {
   //if upload pictures, or take pictures becomes a thing either URL location goes here? Or the actual file does too?
   //If demo.wav/.mp3 becomes a thing will the API or file location live here too?
   const [ inputValues, setInputValues] = useState({
@@ -28,6 +28,11 @@ export default function ProfileForm({onCancel, onSubmit}) {
     about: '',
 
   });
+  useEffect (() => {
+    if (isEditing && initialValues) {
+      setInputValues(initialValues);
+    }
+  }, [isEditing, initialValues])
 
   function inputChangedHandler( inputIdentifier, enteredValue) {
     //update state based on prev. state
@@ -43,7 +48,7 @@ export default function ProfileForm({onCancel, onSubmit}) {
     const profileData = {
       profileName: inputValues.profileName,
       location: inputValues.location,
-      imageUrl: '',
+      imageUrl: inputValues.imageUrl,
       inspiration: inputValues.inspiration,
       genre: inputValues.genre,
       seeking: inputValues.seeking,
@@ -63,7 +68,7 @@ export default function ProfileForm({onCancel, onSubmit}) {
 
   return (
     <ScrollView> 
-      <Text style={styles.title}>Edit Your Profile</Text>     
+     <Text style={styles.title}>{isEditing ? 'Edit Your Profile' : 'Create Profile'}</Text>
       {/* upload Image tbd */}
       {/* Location API */}
       <View style={styles.inputsRow}>
@@ -80,6 +85,11 @@ export default function ProfileForm({onCancel, onSubmit}) {
         value: setInputValues.location,
       }}/>
       </View>
+      <Input label="Upload pic" textInputConfig={{
+          placeholder: 'http://superscoolimage.jpg"',
+          onChangeText: inputChangedHandler.bind(this, 'imgUrl'),
+        value: setInputValues.imageUrl,
+      }}/>
       <Input label="Inspiration" textInputConfig={{
         placeholder: 'What music inspires you',
         onChangeText: inputChangedHandler.bind(this, 'inspiration'),

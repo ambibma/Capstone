@@ -13,6 +13,8 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredentia
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [loadingInitial, setLoadingInitial] = useState(true)
+  const  [profileCreated, setProfileCreated] = useState(false)
+  const [profile, setProfile] = useState(null);
   
   
   //implicitly returns an unsubscribe
@@ -73,8 +75,12 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithCredentia
       loading,       
       signIn,
       signUp,
-      logOut
-    }), [user, loading, error ] )
+      profileCreated,
+      setProfileCreated,
+      logOut,
+      profile,
+      setProfile
+    }), [user, loading, error, profileCreated ] )
 
   
     

@@ -8,7 +8,7 @@ export default function ProfileScreen() {
   const {logOut} = useAuth();
 
   function HandleButtonPress() {
-    navigation.navigate("ProfileCreateScreen")
+    navigation.navigate("EditProfileScreen")
   }
   return (
     <View style={styles.container}>

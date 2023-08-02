@@ -18,6 +18,8 @@ const MainStackScreens = () => {
   const {user} = useAuth()
   console.log(user)
 
+    
+
 
   return (
     <MainStack.Navigator>
@@ -26,7 +28,7 @@ const MainStackScreens = () => {
                   <MainStack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }} />
                   <MainStack.Screen name="CardDetails" component={CardDetails} />
                   <MainStack.Screen name="Profile" component={ProfileStackScreens} />
-                  {/* <MainStack.Screen name="ProfileCreateScreen" component={ProfileCreateScreen} /> */}
+                  
                 </>
               ) : (
                 <MainStack.Screen name="Auth" component={AuthStackScreens} options={{ headerShown: false }} />

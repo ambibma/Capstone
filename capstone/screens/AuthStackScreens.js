@@ -18,6 +18,7 @@ import HomeScreen from './HomeScreen';
 import useAuth from '../hooks/useAuth';
 import ProfileCreateScreen from './ProfileCreateScreen';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import ProfileCreate from './ProfileCreateScreen';
 
 
 
@@ -149,9 +150,8 @@ export  function LoginScreen({navigation}) {
   )
 }
 
-export  function SignUpScreen() {
-
-  
+export  function SignUpScreen() { 
+    const {setProfileCreated} = useAuth();
 
     const navigation = useNavigation()
 
@@ -176,10 +176,15 @@ export  function SignUpScreen() {
         register("password");
     }, [] )
   
-    const createUser = async ({email, password}) => {    
+    const createUser = async ({email, password}) => { 
       try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        navigation.navigate("ProfileCreateScreen")
+        const userCredential = await createUserWithEmailAndPassword(
+          auth, 
+          email, 
+          password
+        );
+        setProfileCreated(false);
+        // navigation.navigate("ProfileCreateScreen", {userId: userCredential.user.uid})
         console.log("User created successfully", userCredential.user);
       } catch (error) {
         console.error("Error creating user", error.message)
@@ -217,9 +222,8 @@ function AuthStackScreens() {
   return <AuthStack.Navigator > 
     <AuthStack.Screen name="LoginScreen" component={LoginScreen}/>
     <AuthStack.Screen name="SignUpScreen" component={SignUpScreen}/>
-    <AuthStack.Screen name="ProfileCreateScreen" component={ProfileCreateScreen}/>
-    {/* navigate to profilecreate screen */}
- 
+    {/* <AuthStack.Screen name="ProfileCreateScreen" component={ProfileCreate}/> */}
+    
   </AuthStack.Navigator>
 }
 
